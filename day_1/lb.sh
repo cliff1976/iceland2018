@@ -17,6 +17,7 @@
 
 # build a nice little lightbox page for all the images in a directory
 # expect thumbnails in a thumbnail directory coming from imageindex
+# expect medium-sized images in a medium directory coming from imageindex
 
 imageindex -norecurse -noslide -nodetail -nodirs -nomontage;
 
@@ -42,7 +43,7 @@ echo "<body>" >> lb.html;
 for i in *.jpg; 
 do
     echo "processing $i";
-    echo "<a class=\"\" href=\"$i\" data-lightbox=\"$MYDIR\" data-title=\"$MYDIR &rarr; $i\"><img class=\"example-image\" src=\"thumbnail/$i\" alt=\"\"/></a> 
+    echo "<div style=\"display: inline-block; margin: 0.5em;\"><a class=\"\" href=\"medium/$i\" data-lightbox=\"$MYDIR\" data-title=\"$MYDIR &rarr; $i\"><img class=\"example-image\" src=\"thumbnail/$i\" alt=\"\"/></a><br/><a href=\"$i\">$i</a></div> 
     " >> lb.html;
 done
 
@@ -59,4 +60,4 @@ echo "<script>
 
 echo "</body>" >> lb.html;
 echo "</html>" >> lb.html;
-# mv lb.html index.html;
+mv lb.html index.html;
