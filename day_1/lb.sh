@@ -1,24 +1,24 @@
 #/bin/sh
 
 # do a leading-zero filename change for images 1.jpg through 9.jpg
-for i in 1.jpg 2.jpg 3.jpg 4.jpg 5.jpg 6.jpg 7.jpg 8.jpg 9.jpg;
-do
-    echo "Renaming $i to 0${i/.jpg}.jpg"
-    mv "$i" "0${i/.jpg}".jpg;
-done
-
-
-# do a leading zero filename change for images like ??.jpg
-for i in ??.jpg;
-do
-    echo "Renaming $i to 0${i/.jpg}.jpg"
-    mv "$i" "0${i/.jpg}".jpg;
-done
+# for i in 1.jpg 2.jpg 3.jpg 4.jpg 5.jpg 6.jpg 7.jpg 8.jpg 9.jpg;
+# do
+#     echo "Renaming $i to 0${i/.jpg}.jpg"
+#     mv "$i" "0${i/.jpg}".jpg;
+# done
+# 
+# 
+# # do a leading zero filename change for images like ??.jpg
+# for i in ??.jpg;
+# do
+#     echo "Renaming $i to 0${i/.jpg}.jpg"
+#     mv "$i" "0${i/.jpg}".jpg;
+# done
 
 # build a nice little lightbox page for all the images in a directory
 # expect thumbnails in a thumbnail directory coming from imageindex
 
-imageindex -norecurse -nomedium -noslide -nodetail -nodirs -nomontage;
+imageindex -norecurse -noslide -nodetail -nodirs -nomontage;
 
 
 
@@ -59,4 +59,4 @@ echo "<script>
 
 echo "</body>" >> lb.html;
 echo "</html>" >> lb.html;
-mv lb.html index.html;
+# mv lb.html index.html;
